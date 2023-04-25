@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "chrome-types": "^0.1.187",
-    "git": "^0.1.5"
+    "chrome-types": "^0.1.187"
   }
 }

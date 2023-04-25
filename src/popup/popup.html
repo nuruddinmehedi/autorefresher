@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Auto Refresh site list </title>
+		<link rel="stylesheet" href="../css/style.css">
+	</head>
+	<body style="width:360px;">
+	<div class="main">
+		<div class="framedisplay">
+			<h1>Refresh Website</h1>
+			<div class="formarea">
+				<div class="input-group">
+					<div class="label1">
+				<label id="titlelabel" for="TitleofURL">Title of URL</label>
+			        </div>
+				<input id="title" type="text" placeholder="Example:fiverr">
+			    </div>
+				<div class="input-group">
+					<div class="label1">
+					<label id="urllabel" for="TitleofURL">URL or Link of website</label>
+				</div>  
+					<input id="url" type="text" placeholder="Example:https://www.fiverr.com/">
+				</div>
+				<div class="timeheader">
+					<h5>Set a Time</h5>
+				</div>
+				<div class="timearea">
+					<input id="h" min="0" max="24" type="number" placeholder="hours">
+					<input id="mm" min="0"  type="number" placeholder="minutes">
+					<input id="sc" min="0" type="number" placeholder="seconds">
+				</div>
+			</div>
+		</div>
+		<div class="addbutton">
+			<button id="addbutton" class="addbutton">Add to List</button>
+		</div>
+		<div class="listarea" id="listarea">
+               
+			<!--dynamicly updated-->	
+		</div>
+		<div class="footer">
+			<h3 id="btnsid" class="shareh"><a href="https://chrome.google.com/webstore/detail/line/ophjlpahpchlmihnnnihgmmeilfjmjjc?hl=en-US">share with your friend</a></h3>
+		   
+		</div>
+	</div>
+	<script src="app.js"></script>
+	<!-- <script src="js/bg.js"></script> -->
+	</body>
+</html>

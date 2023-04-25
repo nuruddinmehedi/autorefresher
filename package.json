@@ -1,0 +1,15 @@
+{
+  "name": "auto-refresher-extension",
+  "version": "1.1.0",
+  "description": "this is a page refresher extension with a lot of feature",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "chrome-types": "^0.1.187",
+    "git": "^0.1.5"
+  }
+}

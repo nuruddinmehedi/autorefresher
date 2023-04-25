@@ -1,0 +1,179 @@
+*{
+margin:0px;
+border:0px;
+color:black;
+padding:0px;
+
+}
+.framedisplay {
+    height: 328px;
+    width: 323px;
+    border: 5px solid #FF0075;
+    border-radius: 7px;
+    margin: 15px;
+    margin-bottom: 10px;
+}
+.framedisplay h1 {
+    text-align: center;
+    font-size: 24px;
+    padding-top: 10px;
+    color: #172774;
+}
+input[type=text]{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  input[type=text]::placeholder {
+    color: #172774;
+}
+input[type=number]::placeholder {
+    color: #172774;
+}
+  label{
+      font-size: 14px;
+      font-weight: bold;
+      color: #172774;
+
+  }
+  .formarea{
+    margin-top: 30px;
+    color: #172774;
+  }
+  .input-group{
+    padding: 0px 15px;
+  }
+  .timearea{
+      display: flex;
+  }
+  input[type=number]{
+width: 91px;
+padding: 10px;
+margin-left: 5px;
+border: 1px solid #ccc;
+border-radius: 4px;
+box-sizing: border-box;
+  }
+.timeheader h5{
+      text-align: center;
+      font-size: 14px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      color: #172774;
+  }
+  .timearea{
+    background-color: #FF0075;
+    margin-right: 4px;
+    margin-left: 4px;
+    border-radius: 50px;
+    padding: 10px;
+    color: #172774;
+  }
+ 
+  .addbutton button{
+    padding: 20px 110px 20px 110px;
+    border-radius: 20px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: 24px;
+    background-color: #77D970;
+    cursor: pointer;
+    color: #172774;
+
+  }
+  .switch{
+    position: relative;
+    height: 30px;
+    width: 70px;
+    display: inline-block;
+  
+  }
+  .slider{
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transition: .4s;
+      background-color:  rgb(170, 167, 167);
+      border-radius: 30px;
+      cursor: pointer;}
+      .switch input {display: none;}
+      .slider::before{
+          position: absolute;
+          content: "";
+          height: 30px;
+          width: 30px;
+          left: 1px;
+          bottom: 0px;
+          transition: .4s;
+          background-color: #ffff;
+          border-radius: 30px;
+      }
+      input:checked + .slider{
+          background-color: #4CAF50;
+      }
+      input:checked + .slider::before{
+          transform: translateX(35px);
+      }
+      .item{
+        display: flex;
+        position: relative;
+        border: 1px solid #172774;
+        margin: 10px 15px;
+        padding: 7px 5px;
+        color: #172774;
+      }
+      .btn-edit{
+        background-color: #4CAF50;
+        padding: 5px 14px;
+        color: #172774;
+        cursor: pointer;
+      }
+      .btn-delete{
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-left: 1px solid #172774;
+        border-bottom: 1px solid #172774;
+        padding: 3px 14px;
+        color: #172774;
+        cursor: pointer;
+      }
+      .title{
+        font-size: 18px;
+    padding: 5px;
+    width: 139px;
+    display: flex;
+    color: #172774;
+      }
+      .batch{
+        margin-top: -9px;
+        margin-left: 3px;
+        background-color: #FF0075;;
+        font-size: 12px;
+        font-weight: bold;
+        border-radius: 10px;
+        padding: 8px 9px 0px 4px;
+        color: #172774;
+      }
+      .title h5{
+        color: #172774;
+      }
+      .footer{
+        border-top: 1px solid #E9EBEC;
+        margin-top: 100px;
+    }
+    .footer h3{
+        text-align: center;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .footer h3 a{
+        text-decoration: none;
+        color: grey;
+    }

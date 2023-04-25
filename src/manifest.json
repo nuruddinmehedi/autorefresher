@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Auto Refresher",
+    "description": "Base Level Extension",
+    "version": "1.2.1",
+    "background": {
+        "service_worker": "service_worker.js",
+        "type": "module"
+    },
+    "action": {
+        "default_popup": "popup/popup.html",
+        "default_icon": "images/icon-128.png"
+      }
+      ,
+    "permissions": [
+        "storage",
+        "tabs",
+        "alarms",
+        "notifications"
+    ],
+    "icons": {
+        "16": "images/icon-16.png",
+        "32": "images/icon-32.png",
+        "48": "images/icon-64.png",
+        "128": "images/icon-128.png"
+    }
+}

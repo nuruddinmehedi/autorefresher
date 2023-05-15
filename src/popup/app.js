@@ -50,6 +50,7 @@ const h= document.getElementById('h')
 const mm= document.getElementById('mm')
 const sc= document.getElementById('sc')
 const title= document.getElementById('title')
+const exact= document.getElementById('exact')
 const url = document.getElementById('url')
 const hHandeler= (e)=>{
     if(e.target.value>24){
@@ -133,6 +134,7 @@ const box= JSON.parse(elm.target.getAttribute('box'))
     const data={
         title: title.value,
         url: url.value,
+        exact:exact.checked,
         time: {
             h:objH,
             m:objM,
@@ -143,7 +145,6 @@ const box= JSON.parse(elm.target.getAttribute('box'))
 
     }
     const getTitle= ()=> {
-        console.log('hello144')
         if(title.value.length>10){
             return title.value.substr(0,10)
         }else{
@@ -193,6 +194,7 @@ const box= JSON.parse(elm.target.getAttribute('box'))
     h.value=""
     mm.value=""
     sc.value=""
+    exact.checked= false;
 }
 addButton.addEventListener('click',addButtonHandeler)
 
@@ -208,6 +210,7 @@ function addEditButtonListener(element){
             addButton.setAttribute('box',res[e.target.id].isOn)
             addButton.setAttribute('dataid',e.target.id)
              title.value= res[e.target.id].title
+             exact.checked= res[e.target.id].exact
              url.value= res[e.target.id].url
              h.value= res[e.target.id].time.h
              mm.value= res[e.target.id].time.m
@@ -248,12 +251,12 @@ chrome.runtime.onMessage.addListener(
             const data= request.data
             const  decrementnumbertag= document.getElementById(`${data.key}batch`)
             decrementnumbertag.innerHTML=`${data.sec}s`
-          setTimeout(()=>{
-          if(data.sec!=0){
-            decrementnumbertag.innerHTML=`${data.sec-1}s`
-          }
+        //   setTimeout(()=>{
+        //   if(data.sec!=0){
+        //     decrementnumbertag.innerHTML=`${data.sec-1}s`
+        //   }
           
-          },1000)
+        //   },1000)
         }
     }
 );

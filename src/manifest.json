@@ -1,8 +1,8 @@
 {
     "manifest_version": 3,
     "name": "Auto Refresher",
-    "description": "Base Level Extension",
-    "version": "1.2.1",
+    "description": " user friendly Auto Refresher tool.",
+    "version": "2.1.0",
     "background": {
         "service_worker": "service_worker.js",
         "type": "module"

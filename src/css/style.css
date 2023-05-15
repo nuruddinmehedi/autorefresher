@@ -6,7 +6,7 @@ padding:0px;
 
 }
 .framedisplay {
-    height: 328px;
+    height: 390px;
     width: 323px;
     border: 5px solid #FF0075;
     border-radius: 7px;
@@ -64,6 +64,9 @@ box-sizing: border-box;
       padding-top: 10px;
       padding-bottom: 10px;
       color: #172774;
+  }
+  .exact{
+    padding: 10px 0px 10px 16px;
   }
   .timearea{
     background-color: #FF0075;

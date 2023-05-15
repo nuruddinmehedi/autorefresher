@@ -6,7 +6,6 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 
 
         chrome.storage.local.get((res) => {
-            console.log(res)
         })
         decrementHandeler()
     }
@@ -14,24 +13,25 @@ chrome.alarms.onAlarm.addListener(function (alarm) {
 
 function decrementHandeler() {
     chrome.storage.local.get((res) => {
-
         for (let key in res) {
             if (res[key].isOn) {
                 let decrementnumber = parseInt(res[key].sec)
                 // set the batch text
                 const regex = /^(?:https?:\/\/)?(?:[^@\n]+@)?([^:\/\n?#]+)(?:\/[^?\n#]*)*(?=[\s?#]|$)/;
-                const dataurl = res[key].url.match(regex)[0];
+                const dataurl = (!res[key].exact)?res[key].url.match(regex)[0]:res[key].url;
 
                 chrome.tabs.query({}, (tabs) => {
                     for (let i = 0; i < tabs.length; i++) {  
-                        const tabUrl = tabs[i].url.match(regex)?tabs[i].url.match(regex)[0]:null
-                        console.log(tabUrl)
+                        const fsttaburl= tabs[i].url.match(regex)?tabs[i].url.match(regex)[0]:null
+                        const tabUrl = (!res[key].exact)?fsttaburl:tabs[i].url
+                        let tabToRefresh = i
                         if (tabUrl === dataurl) {
-                            let tabToRefresh = i
                             chrome.action.setBadgeText({ tabId: tabs[tabToRefresh].id, text: decrementnumber.toString() })
                             // chrome.tabs.reload(tabs[tabToRefresh].id)
 
 
+                        }else{
+                            chrome.action.setBadgeText({ tabId: tabs[tabToRefresh].id, text: '' })
                         }
 
 
@@ -42,7 +42,7 @@ function decrementHandeler() {
                 if (decrementnumber <= 0) {
                     chrome.tabs.query({}, (tabs) => {
                         for (let i = 0; i < tabs.length; i++) {
-                            const tabUrl = tabs[i].url.match(regex)?tabs[i].url.match(regex)[0]:null
+                            const tabUrl = (!res[key].exact)?tabs[i].url.match(regex)?tabs[i].url.match(regex)[0]:null:tabs[i].url
                             if (tabUrl === dataurl) {
                                 let tabToRefresh = i
                                 chrome.tabs.reload(tabs[tabToRefresh].id)
@@ -64,6 +64,7 @@ function decrementHandeler() {
                     chrome.storage.local.set({ [key]: data }, () => {
                     });
 
+                  
                     const msg = chrome.runtime.sendMessage({
                         msg: "reload",
                         data: { key: key, sec: res[key].sec }
